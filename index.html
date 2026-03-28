@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mostafa Alashry — QA Automation Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f5f2ed;
+  --bg2: #eeeae3;
+  --ink: #1a1714;
+  --ink2: #3d3830;
+  --muted: #9a9080;
+  --accent: #c84b2f;
+  --accent2: #2a5c8a;
+  --border: #d8d2c8;
+  --white: #faf8f5;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'Instrument Sans',sans-serif;font-weight:400;line-height:1.6;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.4rem 4rem;background:rgba(245,242,237,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.nav-logo{font-family:'Fraunces',serif;font-weight:900;font-size:1.1rem;color:var(--ink);text-decoration:none;letter-spacing:-0.03em;}
+.nav-logo em{font-style:italic;color:var(--accent);}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--muted);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover{color:var(--ink);}
+.nav-cta{font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--white);background:var(--ink);padding:0.5rem 1.2rem;border-radius:100px;text-decoration:none;letter-spacing:0.06em;transition:background 0.2s;}
+.nav-cta:hover{background:var(--accent);}
+#hero{min-height:100vh;padding:10rem 4rem 6rem;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;}
+.hero-bg-text{position:absolute;top:50%;right:-2rem;transform:translateY(-50%);font-family:'Fraunces',serif;font-weight:900;font-size:28vw;color:rgba(200,75,47,0.04);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em;}
+.hero-eyebrow{display:flex;align-items:center;gap:1rem;margin-bottom:2.5rem;animation:fadeUp 0.7s ease both;}
+.eyebrow-line{width:40px;height:1px;background:var(--accent);}
+.eyebrow-text{font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--accent);letter-spacing:0.15em;text-transform:uppercase;}
+.hero-available{display:inline-flex;align-items:center;gap:0.5rem;background:#e8f5e9;border:1px solid #a5d6a7;border-radius:100px;padding:0.3rem 0.9rem;font-family:'DM Mono',monospace;font-size:0.65rem;color:#2e7d32;letter-spacing:0.08em;margin-left:1rem;}
+.hero-available::before{content:'';width:5px;height:5px;background:#4caf50;border-radius:50%;animation:pulse 2s infinite;}
+h1{font-family:'Fraunces',serif;font-size:clamp(3.5rem,8vw,7.5rem);font-weight:900;line-height:0.95;letter-spacing:-0.04em;margin-bottom:2rem;animation:fadeUp 0.7s 0.1s ease both;}
+h1 em{font-style:italic;font-weight:300;color:var(--accent);}
+h1 .sub{display:block;font-size:0.45em;font-weight:300;font-style:italic;color:var(--muted);letter-spacing:-0.01em;margin-top:0.5rem;}
+.hero-tagline{max-width:520px;font-size:1.05rem;color:var(--ink2);margin-bottom:3rem;line-height:1.9;animation:fadeUp 0.7s 0.2s ease both;border-left:2px solid var(--accent);padding-left:1.5rem;}
+.hero-tagline strong{color:var(--ink);font-weight:600;}
+.hero-stats{display:flex;gap:0;margin-bottom:3rem;animation:fadeUp 0.7s 0.3s ease both;border:1px solid var(--border);border-radius:12px;overflow:hidden;width:fit-content;background:var(--white);}
+.stat{padding:1.2rem 2.5rem;border-right:1px solid var(--border);text-align:center;}
+.stat:last-child{border-right:none;}
+.stat-n{font-family:'Fraunces',serif;font-size:2.2rem;font-weight:900;color:var(--accent);line-height:1;display:block;letter-spacing:-0.03em;}
+.stat-l{font-family:'DM Mono',monospace;font-size:0.6rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;display:block;margin-top:0.3rem;}
+.hero-actions{display:flex;gap:1rem;animation:fadeUp 0.7s 0.4s ease both;}
+.btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.9rem 2rem;border-radius:8px;font-family:'DM Mono',monospace;font-size:0.75rem;letter-spacing:0.06em;text-decoration:none;transition:all 0.2s;border:none;cursor:pointer;}
+.btn-dark{background:var(--ink);color:var(--white);}
+.btn-dark:hover{background:var(--accent);transform:translateY(-1px);}
+.btn-outline{background:transparent;color:var(--ink);border:1px solid var(--border);}
+.btn-outline:hover{border-color:var(--ink);transform:translateY(-1px);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
+.divider{height:1px;background:var(--border);margin:0 4rem;}
+#about{padding:7rem 4rem;background:var(--white);}
+.about-inner{max-width:1050px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:6rem;align-items:start;}
+.section-label{font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:1.5rem;display:flex;align-items:center;gap:0.8rem;}
+.section-label::before{content:'';width:20px;height:1px;background:var(--accent);}
+.about-title{font-family:'Fraunces',serif;font-size:2.5rem;font-weight:700;line-height:1.15;letter-spacing:-0.03em;margin-bottom:2rem;}
+.about-title em{font-style:italic;font-weight:300;color:var(--accent);}
+.about-cards{display:flex;flex-direction:column;gap:1rem;}
+.about-card{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:1.3rem 1.5rem;display:flex;gap:1rem;align-items:flex-start;transition:border-color 0.2s,transform 0.2s;}
+.about-card:hover{border-color:var(--accent);transform:translateX(4px);}
+.about-card-icon{font-size:1.3rem;flex-shrink:0;margin-top:0.1rem;}
+.about-card-title{font-family:'Fraunces',serif;font-weight:700;font-size:0.95rem;margin-bottom:0.3rem;letter-spacing:-0.02em;}
+.about-card-text{font-size:0.85rem;color:var(--muted);line-height:1.7;}
+.about-card-text strong{color:var(--ink2);font-weight:500;}
+.about-quote{margin-top:2rem;padding:1.5rem;background:var(--bg2);border-radius:10px;border-left:3px solid var(--accent);}
+.about-quote p{font-family:'Fraunces',serif;font-style:italic;font-size:1rem;color:var(--ink2);line-height:1.8;}
+.about-quote cite{display:block;font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);letter-spacing:0.08em;margin-top:0.8rem;font-style:normal;}
+#skills{padding:7rem 4rem;background:var(--bg);}
+.skills-inner{max-width:1050px;margin:0 auto;}
+.skills-title{font-family:'Fraunces',serif;font-size:2.5rem;font-weight:700;letter-spacing:-0.03em;margin-bottom:3rem;}
+.skills-title em{font-style:italic;font-weight:300;color:var(--accent);}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+.skill-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.5rem;transition:all 0.2s;}
+.skill-card:hover{border-color:var(--ink);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.06);}
+.skill-cat{font-family:'DM Mono',monospace;font-size:0.62rem;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1rem;padding-bottom:0.8rem;border-bottom:1px solid var(--border);}
+.skill-pills{display:flex;flex-wrap:wrap;gap:0.4rem;}
+.pill{background:var(--bg);border:1px solid var(--border);color:var(--ink2);padding:0.22rem 0.65rem;border-radius:4px;font-family:'DM Mono',monospace;font-size:0.67rem;letter-spacing:0.02em;transition:all 0.15s;}
+.pill:hover{background:var(--ink);color:var(--white);border-color:var(--ink);}
+#projects{padding:7rem 4rem;background:var(--ink);color:var(--white);}
+.projects-inner{max-width:1050px;margin:0 auto;}
+.projects-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;}
+.projects-title{font-family:'Fraunces',serif;font-size:2.5rem;font-weight:700;letter-spacing:-0.03em;line-height:1.15;}
+.projects-title em{font-style:italic;font-weight:300;color:var(--accent);}
+.projects-label{font-family:'DM Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.3);letter-spacing:0.12em;text-transform:uppercase;}
+.project-card{border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:2.5rem;margin-bottom:1.2rem;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;transition:all 0.25s;background:rgba(255,255,255,0.02);position:relative;overflow:hidden;}
+.project-card::before{content:attr(data-num);position:absolute;right:2rem;top:50%;transform:translateY(-50%);font-family:'Fraunces',serif;font-size:8rem;font-weight:900;color:rgba(255,255,255,0.02);line-height:1;pointer-events:none;}
+.project-card:hover{border-color:rgba(200,75,47,0.4);background:rgba(200,75,47,0.04);transform:translateX(4px);}
+.proj-type{font-family:'DM Mono',monospace;font-size:0.62rem;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.7rem;}
+.proj-name{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:700;letter-spacing:-0.02em;margin-bottom:0.8rem;line-height:1.2;}
+.proj-desc{font-size:0.88rem;color:rgba(255,255,255,0.5);line-height:1.8;margin-bottom:1.2rem;max-width:560px;}
+.proj-tech{display:flex;flex-wrap:wrap;gap:0.4rem;}
+.proj-pill{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);padding:0.2rem 0.6rem;border-radius:4px;font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.03em;}
+.proj-meta{display:flex;flex-direction:column;align-items:flex-end;gap:1.2rem;position:relative;z-index:1;}
+.proj-count-n{font-family:'Fraunces',serif;font-size:3rem;font-weight:900;color:var(--accent);line-height:1;display:block;letter-spacing:-0.04em;}
+.proj-count-l{font-family:'DM Mono',monospace;font-size:0.58rem;color:rgba(255,255,255,0.3);letter-spacing:0.1em;text-transform:uppercase;display:block;margin-top:0.2rem;text-align:right;}
+.proj-link{display:inline-flex;align-items:center;gap:0.4rem;padding:0.55rem 1.1rem;border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:rgba(255,255,255,0.6);text-decoration:none;font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.06em;transition:all 0.2s;white-space:nowrap;}
+.proj-link:hover{border-color:var(--accent);color:var(--accent);}
+#contact{padding:7rem 4rem;background:var(--white);}
+.contact-inner{max-width:1050px;margin:0 auto;}
+.contact-top{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-bottom:3rem;}
+.contact-title{font-family:'Fraunces',serif;font-size:2.8rem;font-weight:700;letter-spacing:-0.04em;line-height:1.1;margin-bottom:1.2rem;}
+.contact-title em{font-style:italic;font-weight:300;color:var(--accent);}
+.contact-sub{font-size:0.95rem;color:var(--muted);line-height:1.8;margin-bottom:2rem;}
+.contact-links{display:flex;flex-direction:column;gap:0.7rem;}
+.contact-link{display:flex;align-items:center;gap:1rem;padding:1.1rem 1.4rem;background:var(--bg);border:1px solid var(--border);border-radius:10px;text-decoration:none;color:var(--ink);transition:all 0.2s;}
+.contact-link:hover{border-color:var(--accent);transform:translateX(4px);background:var(--white);}
+.cl-icon{width:36px;height:36px;background:var(--white);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.95rem;flex-shrink:0;}
+.cl-label{font-family:'DM Mono',monospace;font-size:0.6rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;display:block;margin-bottom:0.15rem;}
+.cl-value{font-size:0.88rem;color:var(--ink);}
+.cl-arrow{margin-left:auto;color:var(--muted);font-size:0.9rem;transition:all 0.2s;}
+.contact-link:hover .cl-arrow{color:var(--accent);transform:translateX(3px);}
+footer{padding:2rem 4rem;background:var(--ink);display:flex;justify-content:space-between;align-items:center;}
+.footer-logo{font-family:'Fraunces',serif;font-weight:900;font-size:1rem;color:var(--white);letter-spacing:-0.03em;}
+.footer-logo em{font-style:italic;color:var(--accent);}
+.footer-copy{font-family:'DM Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.25);letter-spacing:0.08em;}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+@media(max-width:768px){nav{padding:1rem 1.5rem;}.nav-links{display:none;}#hero,#about,#skills,#projects,#contact{padding:5rem 1.5rem;}.about-inner,.contact-top{grid-template-columns:1fr;gap:2.5rem;}.skills-grid{grid-template-columns:1fr;}.project-card{grid-template-columns:1fr;}.proj-meta{flex-direction:row;align-items:center;}.divider{margin:0 1.5rem;}footer{flex-direction:column;gap:1rem;text-align:center;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="#hero" class="nav-logo">Mostafa<em>.</em></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Hire Me</a>
+</nav>
+
+<section id="hero">
+  <div class="hero-bg-text">QA</div>
+  <div class="hero-eyebrow">
+    <div class="eyebrow-line"></div>
+    <span class="eyebrow-text">QA Automation Engineer · Cairo, Egypt</span>
+    <span class="hero-available">Available Now</span>
+  </div>
+  <h1>
+    I Find<br>
+    What <em>Breaks</em>
+    <span class="sub">Before your users do.</span>
+  </h1>
+  <p class="hero-tagline">
+    A <strong>captain</strong> reads the game before it happens. A <strong>lawyer</strong> finds the flaw in every argument. A <strong>QA engineer</strong> finds the bug before it ships. — I've been training all three, my whole life.
+  </p>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-n">59</span><span class="stat-l">Automated Tests</span></div>
+    <div class="stat"><span class="stat-n">3</span><span class="stat-l">Frameworks Built</span></div>
+    <div class="stat"><span class="stat-n">10</span><span class="stat-l">Years as Captain</span></div>
+    <div class="stat"><span class="stat-n">95%</span><span class="stat-l">Academic Honors</span></div>
+  </div>
+  <div class="hero-actions">
+    <a href="#projects" class="btn btn-dark">See My Work →</a>
+    <a href="#contact" class="btn btn-outline">Get In Touch</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="about">
+  <div class="about-inner">
+    <div class="reveal">
+      <div class="section-label">About Me</div>
+      <h2 class="about-title">Three lives.<br>One <em>mindset.</em></h2>
+      <div class="about-quote">
+        <p>"The best point guard doesn't just play — he reads every player on the court, sees the gap before it opens, and acts before anyone else reacts. That's exactly what I do with code."</p>
+        <cite>— Mostafa Alashry, ex-Basketball Captain · QA Engineer</cite>
+      </div>
+    </div>
+    <div class="about-cards reveal">
+      <div class="about-card">
+        <div class="about-card-icon">🏀</div>
+        <div>
+          <div class="about-card-title">10 Years as Team Captain</div>
+          <div class="about-card-text">Leading a team means <strong>seeing what others miss</strong> — the open lane, the defensive gap, the moment before it breaks. That pattern recognition is now how I approach every test suite.</div>
+        </div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon">⚖️</div>
+        <div>
+          <div class="about-card-title">Law Graduate — Honors, 95%</div>
+          <div class="about-card-text">Law trained me to <strong>find the flaw in every argument</strong> — to read requirements word by word and spot what's missing. In QA, requirements are the law. I find the loopholes.</div>
+        </div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon">🎯</div>
+        <div>
+          <div class="about-card-title">ISTQB Certified · QA Automation</div>
+          <div class="about-card-text">Built 3 production-ready frameworks covering <strong>Web UI, Mobile, and API</strong> testing — with clean architecture, real design patterns, and 59 automated test cases.</div>
+        </div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon">🌍</div>
+        <div>
+          <div class="about-card-title">Real-World Experience</div>
+          <div class="about-card-text">Actively testing real products through <strong>uTest & Testlio</strong> — international freelance platforms — submitting structured bug reports for global clients.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="skills-inner">
+    <div class="section-label reveal">Technical Skills</div>
+    <h2 class="skills-title reveal">My <em>Toolkit</em></h2>
+    <div class="skills-grid">
+      <div class="skill-card reveal"><div class="skill-cat">Automation</div><div class="skill-pills"><span class="pill">Selenium WebDriver</span><span class="pill">Appium</span><span class="pill">REST Assured</span><span class="pill">TestNG</span><span class="pill">Maven</span><span class="pill">UiAutomator2</span></div></div>
+      <div class="skill-card reveal"><div class="skill-cat">Design Patterns</div><div class="skill-pills"><span class="pill">Page Object Model</span><span class="pill">Flow Layer</span><span class="pill">Layered Architecture</span><span class="pill">Data-Driven</span><span class="pill">Service Layer</span></div></div>
+      <div class="skill-card reveal"><div class="skill-cat">Manual Testing</div><div class="skill-pills"><span class="pill">Functional</span><span class="pill">Regression</span><span class="pill">Mobile Testing</span><span class="pill">Jira</span><span class="pill">Trello</span><span class="pill">Zira</span></div></div>
+      <div class="skill-card reveal"><div class="skill-cat">API & Database</div><div class="skill-pills"><span class="pill">Postman</span><span class="pill">REST Assured</span><span class="pill">SQL</span><span class="pill">POJO Models</span><span class="pill">JSON</span></div></div>
+      <div class="skill-card reveal"><div class="skill-cat">Reporting & DevOps</div><div class="skill-pills"><span class="pill">Allure Reports</span><span class="pill">TestNG Listeners</span><span class="pill">JMeter</span><span class="pill">Git & GitHub</span><span class="pill">CI/CD</span></div></div>
+      <div class="skill-card reveal"><div class="skill-cat">Programming</div><div class="skill-pills"><span class="pill">Java</span><span class="pill">OOP</span><span class="pill">IntelliJ IDEA</span><span class="pill">UML</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="projects-inner">
+    <div class="projects-header reveal">
+      <div>
+        <div class="section-label" style="color:rgba(255,255,255,0.3)">Projects</div>
+        <h2 class="projects-title">Frameworks I<br><em>Built</em></h2>
+      </div>
+      <div class="projects-label">59 total test cases</div>
+    </div>
+    <div class="project-card reveal" data-num="01">
+      <div>
+        <div class="proj-type">Web UI Automation</div>
+        <div class="proj-name">Selenium UI Automation Framework</div>
+        <p class="proj-desc">Enterprise-grade UI framework with a Flow Layer for reusable business flows, JSON Data-Driven Testing, thread-safe parallel execution across Chrome & Firefox, and custom TestNG Listeners with Allure reporting.</p>
+        <div class="proj-tech"><span class="proj-pill">Java</span><span class="proj-pill">Selenium</span><span class="proj-pill">TestNG</span><span class="proj-pill">Maven</span><span class="proj-pill">Allure</span><span class="proj-pill">Page Object Model</span><span class="proj-pill">Flow Layer</span></div>
+      </div>
+      <div class="proj-meta">
+        <div><span class="proj-count-n">26</span><span class="proj-count-l">Test Cases</span></div>
+        <a href="https://github.com/mostafaalashry7/selenium-automation-framework" target="_blank" class="proj-link">GitHub ↗</a>
+      </div>
+    </div>
+    <div class="project-card reveal" data-num="02">
+      <div>
+        <div class="proj-type">Mobile — Native + Hybrid</div>
+        <div class="proj-name">Mobile Automation Framework</div>
+        <p class="proj-desc">Scalable mobile framework supporting Native & WebView testing with a clean dual-layer architecture. Reusable touch actions: swipe, drag & drop, draw gestures — covering full user journeys end to end.</p>
+        <div class="proj-tech"><span class="proj-pill">Java</span><span class="proj-pill">Appium</span><span class="proj-pill">UiAutomator2</span><span class="proj-pill">TestNG</span><span class="proj-pill">Maven</span><span class="proj-pill">Allure</span><span class="proj-pill">Native + WebView</span></div>
+      </div>
+      <div class="proj-meta">
+        <div><span class="proj-count-n">19</span><span class="proj-count-l">Test Cases</span></div>
+        <a href="https://github.com/mostafaalashry7/hybrid-mobile-automation-framework" target="_blank" class="proj-link">GitHub ↗</a>
+      </div>
+    </div>
+    <div class="project-card reveal" data-num="03">
+      <div>
+        <div class="proj-type">API Automation</div>
+        <div class="proj-name">API Automation Framework</div>
+        <p class="proj-desc">Clean API testing framework covering full CRUD operations with a Service Layer pattern, POJO response models for type-safe validation, and dynamic request body classes for structured payload building.</p>
+        <div class="proj-tech"><span class="proj-pill">Java</span><span class="proj-pill">REST Assured</span><span class="proj-pill">TestNG</span><span class="proj-pill">Maven</span><span class="proj-pill">Allure</span><span class="proj-pill">Service Layer</span><span class="proj-pill">POJO Models</span></div>
+      </div>
+      <div class="proj-meta">
+        <div><span class="proj-count-n">14</span><span class="proj-count-l">Test Cases</span></div>
+        <a href="https://github.com/mostafaalashry7/restassured-api-framework" target="_blank" class="proj-link">GitHub ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-top">
+      <div class="reveal">
+        <div class="section-label">Contact</div>
+        <h2 class="contact-title">Let's build<br>something <em>reliable.</em></h2>
+        <p class="contact-sub">Open to Junior QA Automation Engineer opportunities — full-time or remote. If you're hiring or know someone who is, let's talk.</p>
+        <a href="Mostafa_Alashry_QA_CV.pdf" download class="btn btn-dark">Download CV ↓</a>
+      </div>
+      <div class="contact-links reveal">
+        <a href="mailto:mostafaalashry35@gmail.com" class="contact-link"><div class="cl-icon">✉️</div><div><span class="cl-label">Email</span><span class="cl-value">mostafaalashry35@gmail.com</span></div><span class="cl-arrow">→</span></a>
+        <a href="https://www.linkedin.com/in/mostafa-alashry-qa" target="_blank" class="contact-link"><div class="cl-icon">💼</div><div><span class="cl-label">LinkedIn</span><span class="cl-value">mostafa-alashry-qa</span></div><span class="cl-arrow">→</span></a>
+        <a href="https://github.com/mostafaalashry7" target="_blank" class="contact-link"><div class="cl-icon">⚡</div><div><span class="cl-label">GitHub</span><span class="cl-value">mostafaalashry7</span></div><span class="cl-arrow">→</span></a>
+        <a href="tel:+201023031182" class="contact-link"><div class="cl-icon">📞</div><div><span class="cl-label">Phone</span><span class="cl-value">+20 102 303 1182</span></div><span class="cl-arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Mostafa<em>.</em></div>
+  <div class="footer-copy">QA Automation Engineer · Cairo, Egypt · 2026</div>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 100);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08 });
+reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
